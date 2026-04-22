@@ -2,13 +2,13 @@ namespace ErpCli.Models
 {
     public class Company
     {
-        int Id { get; set; }
-        string? CompanyName { get; set; }
-        string? Street { get; set; }
-        string? HouseNumber { get; set; }
-        string? PostalCode { get; set; }
-        string? City { get; set; }
-        string? Country { get; set; }
-        Currency Currency { get; set; }
+        public int Id { get; set; }
+        public string? CompanyName { get; set; }
+        public string? Street { get; set; }
+        public string? HouseNumber { get; set; }
+        public string? PostalCode { get; set; }
+        public string? City { get; set; }
+        public string? Country { get; set; }
+        public Currency Currency { get; set; }
     }
 }
