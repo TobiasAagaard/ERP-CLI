@@ -10,7 +10,7 @@ namespace ErpCli.Data
             new Company { Id = 2, CompanyName = "CodeMasters", Street = "Second Street", HouseNumber = "456", PostalCode = "67890", City = "CodeTown", Country = "CodeLand", Currency = Currency.EUR },
         };
 
-        public Company GetCompanyById(int id)
+        public Company? GetCompanyById(int id)
         {
             for (int i = 0; i < Companies.Count; i++)
             {
@@ -32,13 +32,11 @@ namespace ErpCli.Data
 
         public void AddCompany(Company company)
         {
-            if (company.Id == 0)
+            if (company.Id != 0)
             {
-                for (int i = 0; i < Companies.Count; i++)
-                {
-                    company.Id = i + 1;
-                }
+                return;
             }
+            company.Id = Companies.Count + 1;
             Companies.Add(company);
         }
 
