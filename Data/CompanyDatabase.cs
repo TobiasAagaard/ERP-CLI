@@ -6,11 +6,11 @@ namespace ErpCli.Data
     {
         List<Company> Companies = new List<Company>()
         {
-            new Company { Id = 1, CompanyName = "TechCool", Street = "Main Street", HouseNumber = "123", PostalCode = "12345", City = "TechCity", Country = "TechLand", Currency = Currency.USD },
-            new Company { Id = 2, CompanyName = "CodeMasters", Street = "Second Street", HouseNumber = "456", PostalCode = "67890", City = "CodeTown", Country = "CodeLand", Currency = Currency.EUR },
+            new Company { Id = 1, Name = "NovoNordisk", Street = "Vinkelvej", HouseNumber = "142", PostalCode = "9000", City = "Aalborg", Country = "Danmark", Currency = Currency.DKK },
+            new Company { Id = 2, Name = "Microsoft", Street = "Micro Street", HouseNumber = "2", PostalCode = "98033", City = "Redmond", Country = "USA", Currency = Currency.USD },
         };
 
-        public Company GetCompanyById(int id)
+        public Company? GetCompanyById(int id)
         {
             for (int i = 0; i < Companies.Count; i++)
             {
