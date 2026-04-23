@@ -1,3 +1,5 @@
+using ErpCli.Models;
+
 namespace ErpCli.Data
 {
     public partial class Database
@@ -12,6 +14,7 @@ namespace ErpCli.Data
                 if (product.Id == id)
                     return product;
             }
+            return null;
         }
         public List<Product> GetProducts()
         {
@@ -36,7 +39,7 @@ namespace ErpCli.Data
             {
                 Product product = ProductList[i];
                 if (product.Id == Id)
-                    ProductList.Remove(i);
+                    ProductList.Remove(product);
             }
         }
     }
