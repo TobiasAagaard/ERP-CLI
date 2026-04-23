@@ -1,4 +1,4 @@
-namespace ErpCLI.Models
+namespace ErpCli.Models
 {
     public class Product
     {

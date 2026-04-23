@@ -7,7 +7,7 @@ namespace ErpCli
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("");
         }
     }
 }
