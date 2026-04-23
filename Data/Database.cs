@@ -1,9 +1,7 @@
-using System.ComponentModel;
-
 namespace ErpCli.Data
 {
     public partial class Database
     {
-        public static Database Instance { get;} = new Database();
+        public static Database Instance { get; set; } = new Database();
     }
 }
