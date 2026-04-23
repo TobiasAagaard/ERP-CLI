@@ -1,4 +1,3 @@
-
 namespace ErpCli.Data
 {
     public partial class Database

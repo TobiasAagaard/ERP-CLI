@@ -1,6 +1,5 @@
-﻿using TECHCOOL.UI;
+using TECHCOOL.UI;
 using ErpCli.Data;
-using ErpCli.Models;
 
 namespace ErpCli
 {
