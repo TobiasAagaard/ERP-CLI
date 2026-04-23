@@ -1,4 +1,5 @@
 ﻿using TECHCOOL.UI;
+using ErpCli.Data;
 
 
 namespace ErpCli
@@ -7,7 +8,7 @@ namespace ErpCli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the ERP CLI!"); 
+            
         }
     }
 }
