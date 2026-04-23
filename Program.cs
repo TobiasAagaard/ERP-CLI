@@ -1,5 +1,5 @@
 using TECHCOOL.UI;
-using ErpCli.Data;
+using ErpCli.Views;
 
 namespace ErpCli
 {
@@ -7,7 +7,7 @@ namespace ErpCli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Screen.Display(new MainMenu());
         }
     }
 }
