@@ -20,12 +20,14 @@ namespace ErpCli.Data
                     return company;
                 }
             }
-             throw new KeyNotFoundException($"Virksomhed med ID {id} blev ikke fundet.");
+             return null;
         }
 
         public List<Company> GetAllCompanies()
         {
-            return Companies;
+            List<Company> companyCopy = new List<Company>();
+            companyCopy.AddRange(Companies);
+            return companyCopy;
         }
 
         public void AddCompany(Company company)
