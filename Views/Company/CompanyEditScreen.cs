@@ -7,7 +7,7 @@ namespace ErpCli.Views
     public class CompanyEditScreen : Screen
     {
         public override string Title { get; set; } = "Rediger Virksomhed";
-        Company company = new();
+        Company? company = new();
 
         public CompanyEditScreen(Company company)
         {
@@ -36,7 +36,7 @@ namespace ErpCli.Views
             form.TextBox("By", nameof(Company.City));
             if (form.Edit(company)) 
             {
-                if (company.Id != 0)
+                if (company != null && company.Id != 0)
                 {
                     Database.Instance.UpdateCompany(company);
                 }
