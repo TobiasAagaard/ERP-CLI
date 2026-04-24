@@ -31,7 +31,7 @@ namespace ErpCli.Views
             var product = listPage.Select();
             if (product != null) 
             {
-                throw new NotImplementedException();
+                Display(new ProductDetails(product));
             }
             else
             {
