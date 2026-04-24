@@ -40,13 +40,15 @@ namespace ErpCli.Data
                     ProductList[i] = editProduct;
             }
         }
-        public void DeleteProduct(int Id)
+        public void DeleteProduct(Product product)
         {
-            for (int i = 0; i < ProductList.Count; i++)
+            if(product.Id == 0)
             {
-                Product product = ProductList[i];
-                if (product.Id == Id)
-                    ProductList.Remove(product);
+                return;
+            }
+            if (ProductList.Contains(product))
+            {
+                ProductList.Remove(product);
             }
         }
     }

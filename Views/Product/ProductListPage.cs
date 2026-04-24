@@ -17,6 +17,9 @@ namespace ErpCli.Views
             listPage.AddKey(ConsoleKey.F3, createNewProduct);
             Console.WriteLine("Tryk F3 for at oprette et nyt produkt");
 
+            listPage.AddKey(ConsoleKey.F5, RemoveProduct);
+            Console.WriteLine("Tryk F5 for at slette et produkt");
+
             listPage.AddColumn("Varenummer", nameof(Product.ItemNumber));
             listPage.AddColumn("Navn", nameof(Product.Name));
             listPage.AddColumn("Lagerantal", nameof(Product.StockQuantity));
@@ -45,6 +48,12 @@ namespace ErpCli.Views
         {
             Product new_product = new();
             Screen.Display(new ProductEditor(new_product));
+        }
+        void RemoveProduct(Product product) 
+        {
+            Database.Instance.DeleteProduct(product);
+            Screen.Clear();
+            Draw();
         }
     }
 }
