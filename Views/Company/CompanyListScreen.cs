@@ -32,7 +32,7 @@ public class CompanyListScreen : Screen
         var company = listPage.Select();
         if (company != null)
         {
-            throw new NotImplementedException();
+            Screen.Display(new CompanyDetails(company));
         }
         else
         {
