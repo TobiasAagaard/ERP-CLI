@@ -1,7 +1,6 @@
 using ErpCli.Models;
 using ErpCli.Data;
 using TECHCOOL.UI;
-using System.Runtime.CompilerServices;
 
 namespace ErpCli.Views;
 public class CompanyListScreen : Screen
@@ -16,6 +15,12 @@ public class CompanyListScreen : Screen
 
         ListPage<Company> listPage = new();
 
+    
+        Console.WriteLine("");
+        Console.WriteLine("Tryk på F1 for at oprette en ny Virksomhed");
+        Console.WriteLine("Tryk på F2 for at redigere en eksisterende Virksomhed");
+        Console.WriteLine("Tryk på F5 for at slette en eksisterende Virksomhed");
+        Console.WriteLine("");
        
         listPage.AddKey(ConsoleKey.F1, CreateNewCompany);
         listPage.AddKey(ConsoleKey.F2, EditCompany);
