@@ -15,6 +15,10 @@ public class CompanyListScreen : Screen
 
         ListPage<Company> listPage = new();
 
+       
+        listPage.AddKey(ConsoleKey.F1, CreateNewCompany);
+
+
         listPage.AddColumn("Virksomhed", nameof(Company.Name), 40);
         listPage.AddColumn("Land", nameof(Company.Country));
         listPage.AddColumn("Valuta", nameof(Company.Currency), 8);
@@ -26,7 +30,6 @@ public class CompanyListScreen : Screen
             listPage.Add(model);
         }
 
-
         var company = listPage.Select();
         if (company != null)
         {
@@ -37,5 +40,11 @@ public class CompanyListScreen : Screen
             Quit();
         }
     }
+    void CreateNewCompany(Company _)
+    {
+        Company company = new Company();
+        Screen.Display(new CompanyEditScreen(company)); 
+    }
+    
     
 }

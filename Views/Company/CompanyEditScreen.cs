@@ -7,7 +7,7 @@ namespace ErpCli.Views
     public class CompanyEditScreen : Screen
     {
         public override string Title { get; set; } = "Rediger Virksomhed";
-        Company? company = new();
+        Company company = new();
 
         public CompanyEditScreen(Company company)
         {
@@ -16,7 +16,7 @@ namespace ErpCli.Views
                 Title = "Rediger " + company.Name;
                 this.company = company;
             }
-            this.company = company;
+            this.company = company ?? new Company();
         }
 
         protected override void Draw()
@@ -36,9 +36,13 @@ namespace ErpCli.Views
             form.TextBox("By", nameof(Company.City));
             if (form.Edit(company)) 
             {
-                if (company != null && company.Id != 0)
+                if (company.Id != 0)
                 {
                     Database.Instance.UpdateCompany(company);
+                }
+                else
+                {
+                    Database.Instance.AddCompany(company);
                 }
                 Console.WriteLine("Ændringerne blev gemt");
             }
