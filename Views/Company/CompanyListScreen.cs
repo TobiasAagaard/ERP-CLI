@@ -17,6 +17,7 @@ public class CompanyListScreen : Screen
 
        
         listPage.AddKey(ConsoleKey.F1, CreateNewCompany);
+        listPage.AddKey(ConsoleKey.F2, EditCompany);
 
 
         listPage.AddColumn("Virksomhed", nameof(Company.Name), 40);
@@ -46,5 +47,9 @@ public class CompanyListScreen : Screen
         Screen.Display(new CompanyEditScreen(company)); 
     }
     
+    void EditCompany(Company company)
+    {
+        Screen.Display(new CompanyEditScreen(company));
+    }
     
 }
