@@ -7,6 +7,9 @@ namespace ErpCli.Views
         protected override void Draw()
         {
             Menu menu = new Menu();
+
+            menu.Add(new ProductListPage());
+
             Display(menu);
         }
     }

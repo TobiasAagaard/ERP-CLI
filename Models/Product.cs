@@ -8,7 +8,9 @@ namespace ErpCli.Models
         public string? Description { get; set; }
         public double? Price { get; set; }
         public double? Cost { get; set; }
+        public double? ProfitPercent => ((Price - Cost) / Price) * 100;
         public string? Location { get; set; }
+        public double StockQuantity { get; set; }
     }
     public enum Unit
     {
