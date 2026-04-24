@@ -6,8 +6,8 @@ namespace ErpCli.Data
     {
         List<Company> Companies = new List<Company>()
         {
-            new Company { Id = 1, Name = "NovoNordisk", Street = "Vinkelvej", HouseNumber = "142", PostalCode = "9000", City = "Aalborg", Country = "Danmark", Currency = Currency.DKK },
-            new Company { Id = 2, Name = "Microsoft", Street = "Micro Street", HouseNumber = "2", PostalCode = "98033", City = "Redmond", Country = "USA", Currency = Currency.USD },
+            new Company { Id = 1, Name = "NovoNordisk", Street = "Vinkelvej", Number = "142", PostalCode = "9000", City = "Aalborg", Country = "Danmark", Currency = Currency.DKK },
+            new Company { Id = 2, Name = "Microsoft", Street = "Micro Street", Number = "2", PostalCode = "98033", City = "Redmond", Country = "USA", Currency = Currency.USD },
         };
 
         public Company? GetCompanyById(int id)

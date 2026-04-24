@@ -9,10 +9,9 @@ namespace ErpCli.Views
             Console.CursorVisible = false;
 
             Menu menu = new Menu();
-            
-            menu.Add(new ProductListPage());
-            
+
             menu.Add(new CompanyListScreen());
+            menu.Add(new ProductListPage());
 
             Display(menu);
         }
