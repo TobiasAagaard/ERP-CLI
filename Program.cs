@@ -7,7 +7,7 @@ namespace ErpCli
     {
         static void Main(string[] args)
         {
-            Screen.Display(new MainMenu());
+            Screen.Display(new ProductListPage());
         }
     }
 }
