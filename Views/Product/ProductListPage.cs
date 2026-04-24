@@ -14,6 +14,9 @@ namespace ErpCli.Views
 
             ListPage<Product> listPage = new();
 
+            listPage.AddKey(ConsoleKey.F3, createNewProduct);
+            Console.WriteLine("Tryk F3 for at oprette et nyt produkt");
+
             listPage.AddColumn("Varenummer", nameof(Product.ItemNumber));
             listPage.AddColumn("Navn", nameof(Product.Name));
             listPage.AddColumn("Lagerantal", nameof(Product.StockQuantity));
@@ -37,6 +40,11 @@ namespace ErpCli.Views
             {
                 Quit();
             }
+        }
+        void createNewProduct(Product _)
+        {
+            Product new_product = new();
+            Screen.Display(new ProductEditor(new_product));
         }
     }
 }

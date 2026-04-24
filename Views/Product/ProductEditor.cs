@@ -30,10 +30,10 @@ namespace ErpCli.Views
             form.TextBox("Varenummer", nameof(product.ItemNumber));
             form.TextBox("Navn", nameof(product.Name));
             form.TextBox("Beskrivelse", nameof(product.Description));
-            form.TextBox("Salgspris", nameof(product.Price));
-            form.TextBox("Indkøbspris", nameof(product.Cost));
+            form.DoubleBox("Salgspris", nameof(product.Price));
+            form.DoubleBox("Indkøbspris", nameof(product.Cost));
             form.TextBox("Lokation", nameof(product.Location));
-            form.TextBox("Antal på lager", nameof(product.StockQuantity));
+            form.DoubleBox("Antal på lager", nameof(product.StockQuantity));
             form.SelectBox("Enhed", nameof(product.Unit));
             form.AddOption("Enhed", "Styk", Unit.Styk);
             form.AddOption("Enhed", "Timer", Unit.Timer);
