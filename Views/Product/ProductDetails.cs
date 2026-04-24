@@ -31,7 +31,7 @@ namespace ErpCli.Views
 
             Console.WriteLine("Tryk F2 for at redigere");
             AddKey(ConsoleKey.F2, () => {
-                throw new NotImplementedException();
+                Screen.Display( new ProductEditor(product) );
             });
         }
     }
