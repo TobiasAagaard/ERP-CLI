@@ -6,9 +6,13 @@ namespace ErpCli.Views
         public override string Title { get; set; } = "LNE Security ";
         protected override void Draw()
         {
-            Menu menu = new Menu();
+            Console.CursorVisible = false;
 
+            Menu menu = new Menu();
+            
             menu.Add(new ProductListPage());
+            
+            menu.Add(new CompanyListScreen());
 
             Display(menu);
         }
