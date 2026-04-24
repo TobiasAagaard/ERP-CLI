@@ -6,7 +6,7 @@ namespace ErpCli.Views
 {
     public class ProductListPage : Screen
     {
-        public override string Title { get; set; } = "Productlist";
+        public override string Title { get; set; } = "Produktliste";
 
         protected override void Draw()
         {
