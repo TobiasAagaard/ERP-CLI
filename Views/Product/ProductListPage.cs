@@ -14,6 +14,8 @@ namespace ErpCli.Views
 
             ListPage<Product> listPage = new();
 
+            Console.WriteLine();
+            
             listPage.AddKey(ConsoleKey.F2, EditProduct);
             Console.WriteLine("Tryk F2 for at redigere et produkt");
 
@@ -22,6 +24,8 @@ namespace ErpCli.Views
 
             listPage.AddKey(ConsoleKey.F5, RemoveProduct);
             Console.WriteLine("Tryk F5 for at slette et produkt");
+
+            Console.WriteLine();
 
             listPage.AddColumn("Varenummer", nameof(Product.ItemNumber));
             listPage.AddColumn("Navn", nameof(Product.Name));
