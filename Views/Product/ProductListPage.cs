@@ -14,7 +14,10 @@ namespace ErpCli.Views
 
             ListPage<Product> listPage = new();
 
-            listPage.AddKey(ConsoleKey.F3, createNewProduct);
+            listPage.AddKey(ConsoleKey.F2, EditProduct);
+            Console.WriteLine("Tryk F2 for at redigere et produkt");
+
+            listPage.AddKey(ConsoleKey.F3, CreateNewProduct);
             Console.WriteLine("Tryk F3 for at oprette et nyt produkt");
 
             listPage.AddKey(ConsoleKey.F5, RemoveProduct);
@@ -44,10 +47,14 @@ namespace ErpCli.Views
                 Quit();
             }
         }
-        void createNewProduct(Product _)
+        void CreateNewProduct(Product _)
         {
             Product new_product = new();
             Screen.Display(new ProductEditor(new_product));
+        }
+        void EditProduct(Product product) 
+        {
+            Screen.Display(new ProductEditor(product));
         }
         void RemoveProduct(Product product) 
         {
