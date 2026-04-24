@@ -1,6 +1,7 @@
 using ErpCli.Models;
 using ErpCli.Data;
 using TECHCOOL.UI;
+using System.Runtime.CompilerServices;
 
 namespace ErpCli.Views;
 public class CompanyListScreen : Screen
@@ -18,6 +19,7 @@ public class CompanyListScreen : Screen
        
         listPage.AddKey(ConsoleKey.F1, CreateNewCompany);
         listPage.AddKey(ConsoleKey.F2, EditCompany);
+        listPage.AddKey(ConsoleKey.F5, DeleteCompany);
 
 
         listPage.AddColumn("Virksomhed", nameof(Company.Name), 40);
@@ -50,6 +52,11 @@ public class CompanyListScreen : Screen
     void EditCompany(Company company)
     {
         Screen.Display(new CompanyEditScreen(company));
+    }
+
+    void DeleteCompany(Company company)
+    {
+        Database.Instance.DeleteCompany(company.Id);
     }
     
 }
