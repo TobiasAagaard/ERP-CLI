@@ -11,9 +11,10 @@ namespace ErpCli.Models
         public double? ProfitPercent => (Price.HasValue && Cost.HasValue && Cost.Value != 0) ? ((Price.Value - Cost.Value) / Cost.Value) * 100 : (double?)null;
         public string? Location { get; set; }
         public double StockQuantity { get; set; }
+        public Unit Unit { get; set; }
     }
     public enum Unit
     {
-        Pieces, Hours, Meters
+        Styk, Timer, Meter
     }
 }
