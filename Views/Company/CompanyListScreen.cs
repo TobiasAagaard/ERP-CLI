@@ -61,6 +61,8 @@ public class CompanyListScreen : Screen
     void DeleteCompany(Company company)
     {
         Database.Instance.DeleteCompany(company.Id);
+        Screen.Clear();
+        Draw();
     }
     
 }
