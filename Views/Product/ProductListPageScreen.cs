@@ -35,13 +35,13 @@ namespace ErpCli.Views
             listPage.AddColumn("Avance i procent", nameof(Product.ProfitPercent));
 
 
-            var products = Database.Instance.GetProducts();
+            List<Product> products = Database.Instance.GetProducts();
             foreach (Product model in products)
             {
                 listPage.Add(model);
             }
 
-            var product = listPage.Select();
+            Product product = listPage.Select();
             if (product != null) 
             {
                 Display(new ProductDetails(product));
