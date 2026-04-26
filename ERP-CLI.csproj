@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
+  <ItemGroup Condition="Exists('..\TECHCOOL\TECHCOOL.csproj')">
     <ProjectReference Include="..\TECHCOOL\TECHCOOL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('..\TECHCOOL\TECHCOOL.csproj')">
+    <PackageReference Include="TECHCOOL" Version="*" />
   </ItemGroup>
 
   <PropertyGroup>
