@@ -31,14 +31,13 @@ public class CompanyListScreen : Screen
         listPage.AddColumn("Land", nameof(Company.Country));
         listPage.AddColumn("Valuta", nameof(Company.Currency), 8);
 
-  
-        var companies = Database.Instance.GetAllCompanies();
+        List<Company> companies = Database.Instance.GetAllCompanies();
         foreach (Company model in companies) 
         {
             listPage.Add(model);
         }
 
-        var company = listPage.Select();
+        Company company = listPage.Select();
         if (company != null)
         {
             Screen.Display(new CompanyDetails(company));
@@ -62,6 +61,8 @@ public class CompanyListScreen : Screen
     void DeleteCompany(Company company)
     {
         Database.Instance.DeleteCompany(company.Id);
+        Screen.Clear();
+        Draw();
     }
     
 }

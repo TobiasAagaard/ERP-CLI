@@ -30,6 +30,7 @@ namespace ErpCli.Views
             form.AddOption("Valuta", "EUR", Currency.EUR);
             form.AddOption("Valuta", "USD", Currency.USD);
             form.AddOption("Valuta", "SEK", Currency.SEK);
+            form.TextBox("Land", nameof(Company.Country));
             form.TextBox("Gade", nameof(Company.Street));
             form.TextBox("Nummer", nameof(Company.Number));
             form.TextBox("Postnummer", nameof(Company.PostalCode));
