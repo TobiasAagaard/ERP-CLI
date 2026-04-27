@@ -28,7 +28,7 @@ public class CompanyListScreen : Screen
 
 
         listPage.AddColumn("Virksomhed", nameof(Company.Name), 40);
-        listPage.AddColumn("Land", nameof(Company.Country));
+        listPage.AddColumn("Land", nameof(Company.Country), 20);
         listPage.AddColumn("Valuta", nameof(Company.Currency), 8);
 
         List<Company> companies = Database.Instance.GetAllCompanies();
