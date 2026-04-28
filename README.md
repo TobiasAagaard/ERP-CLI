@@ -6,15 +6,7 @@ The application is designed as a foundation that can be extended to other indust
 
 ## About LNE Security
  
-LNE Security is a B2B IT-services company with 350 employees and departments in Aalborg, Odense, Nordborg, and Esbjerg. Besides hosting IT services, they sell software licenses and IT hardware from a central warehouse in Odense. The ERP system supports their core business processes: purchasing, inventory management, order processing (pick lists), shipping, and invoicing.
-
-## Tech Stack
- 
-- **Language:** C# 
-- **Framework:** .NET 10 (preview)
-- **UI library:** [TECHCOOL](https://www.nuget.org/packages/TECHCOOL) — a console UI toolkit providing menus, screens, list pages, and forms.
-- **Persistence:** in-memory (a singleton `Database` class with seeded sample data)
-- **CI:** GitHub Actions (`.github/workflows/dotnet-desktop.yml`)
+LNE Security is a B2B IT-services company with 350 employees and departments in Aalborg, Odense, Nordborg, and Esbjerg. Besides hosting IT services, they sell software licenses and IT hardware from a central warehouse in Odense. The ERP system supports their core business processes.
 
 ## Getting Started
  
