@@ -18,7 +18,6 @@ LNE Security is a B2B IT-services company with 350 employees and departments in 
 Clone the repository, navigate to the project folder, and run the following commands in your terminal:
 
 ```bash
-dotnet restore
 dotnet build
 dotnet run
 ```
