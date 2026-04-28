@@ -30,7 +30,7 @@ namespace ErpCli.Views
             SalesOrderHeader salesOrderHeader = listPage.Select();
             if (salesOrderHeader != null) 
             {
-                throw new NotImplementedException();
+                Display(new SalesDetailsScreen(salesOrderHeader));
             }
             else
             {

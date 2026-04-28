@@ -8,15 +8,8 @@ namespace ErpCli.Models
         public int CustomerId { get; set; }
         public OrderStatus Status { get; set; }
         public List<OrderLine> OrderLineList = new List<OrderLine>();
-        public double? OrderTotal()
-        {
-            double? result = 0;
-            foreach(OrderLine orderLine in OrderLineList)
-            {
-                result += orderLine.Product?.Price;
-            }
-            return result;
-        }
+        public double? OrderTotal =>
+            OrderLineList.Sum(orderLine => orderLine.Product?.Price * orderLine.Quantity ?? 0);
         public enum OrderStatus
         {
             Ingen,
