@@ -24,6 +24,49 @@ dotnet run
 
 The app starts in the main menu. Use the arrow keys to navigate, Enter to select, Escape to go back, and the F-keys shown on each screen for actions (F1 / F2 / F3 / F5 for create / edit / new / delete depending on the screen).
 
+## Tests
+
+Unit tests live in the [ERP-CLI.Tests](ERP-CLI.Tests/) project and use [xUnit](https://xunit.net/).
+
+### Run the tests
+
+```bash
+dotnet test
+```
+
+### Current tests
+
+| Class | Test | Verifies |
+|---|---|---|
+| [`ProductTests`](ERP-CLI.Tests/ProductTests.cs) | `ProfitPercent_WhenPriceIsDoubleCost_Returns100` | `Product.ProfitPercent` returns `100` when `Price` is double `Cost` |
+
+### Naming convention
+
+We follow the `MethodName_Scenario_ExpectedBehavior` pattern recommended in Microsoft's [unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices):
+
+- **MethodName** — the method or property under test (e.g. `ProfitPercent`)
+- **Scenario** — the input or state being exercised (e.g. `WhenPriceIsDoubleCost`)
+- **ExpectedBehavior** — the observable result (e.g. `Returns100`)
+
+Example:
+
+```csharp
+[Fact]
+public void ProfitPercent_WhenPriceIsDoubleCost_Returns100()
+{
+    // Arrange
+    Product product = new Product { Price = 100, Cost = 50 };
+
+    // Act
+    var result = product.ProfitPercent;
+
+    // Assert
+    Assert.Equal(100, result);
+}
+```
+
+Each test should follow the **Arrange–Act–Assert** structure so the three phases are easy to read.
+
 ## Development Workflow
  
 We work in small increments using GitHub issues, feature branches, and pull requests.
@@ -48,6 +91,3 @@ We work in small increments using GitHub issues, feature branches, and pull requ
 - [Tobias](https://github.com/TobiasAagaard)
 - [Malthe](https://github.com/Malthebk3)
 
-## License
- 
-School project. Not licensed for production use.
