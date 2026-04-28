@@ -32,6 +32,10 @@ dotnet run
 
 The app starts in the main menu. Use the arrow keys to navigate, Enter to select, Escape to go back, and the F-keys shown on each screen for actions (F1 / F2 / F3 / F5 for create / edit / new / delete depending on the screen).
 
+## Development Workflow
+ 
+We work in small increments using GitHub issues, feature branches, and pull requests. The main branch is protected and can only be updated via pull requests, which must be reviewed and approved by at least one other developer before they can be merged. This ensures code quality and encourages collaboration and knowledge sharing among the team.
+
 ### Issue tracking
  
 Work is broken down into small, scoped issues before any code is written. Issues use a short prefix to indicate which area of the system they belong to:
@@ -46,10 +50,6 @@ Work is broken down into small, scoped issues before any code is written. Issues
 | `B` | Database | B1 Partial Database class with Company methods, B2 Product table SQL script, B3 Address table SQL script, B4 Person table SQL script, B5 Customer table SQL script, B6 Sales order header table SQL script, B7 Sales order table SQL script, B8 SQL Server connection handling |
 | `X` | Extra / cross-cutting | X1 Invoice export HTML/CSS, X2 Unit tests for basic classes, X3 Purchase and sales orders, X4 Inventory management (effectuate orders) |
 
-
-## Development Workflow
- 
-We work in small increments using GitHub issues, feature branches, and pull requests. 
 ## License
  
 School project. Not licensed for production use.
