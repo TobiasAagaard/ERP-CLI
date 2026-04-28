@@ -9,7 +9,7 @@ namespace ErpCli.Models
         public OrderStatus Status { get; set; }
         public List<OrderLine> OrderLineList = new List<OrderLine>();
         public double? OrderTotal =>
-            OrderLineList.Sum(orderLine => orderLine.Product?.Price ?? 0);
+            OrderLineList.Sum(orderLine => orderLine.Product?.Price * orderLine.Quantity ?? 0);
         public enum OrderStatus
         {
             Ingen,
