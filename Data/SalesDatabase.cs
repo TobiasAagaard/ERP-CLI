@@ -37,15 +37,16 @@ namespace ErpCli.Data
                     SalesOrderHeaderList[i] = editSalesOrderHeader;
             }
         }
-        public void DeleteSalesOrderHeader(SalesOrderHeader SalesOrderHeader)
+        public void DeleteSalesOrderHeader(int id)
         {
-            if(SalesOrderHeader.OrderNumber == 0)
+            for (int i = 0; i < SalesOrderHeaderList.Count; i++)
             {
-                return;
-            }
-            if (SalesOrderHeaderList.Contains(SalesOrderHeader))
-            {
-                SalesOrderHeaderList.Remove(SalesOrderHeader);
+                SalesOrderHeader salesOrderHeader = SalesOrderHeaderList[i];
+                if (salesOrderHeader.OrderNumber == id)
+                {
+                    SalesOrderHeaderList.RemoveAt(i);
+                    break;
+                }
             }
         }
     }

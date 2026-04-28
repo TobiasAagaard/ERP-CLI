@@ -62,7 +62,7 @@ namespace ErpCli.Views
         }
         void RemoveProduct(Product product) 
         {
-            Database.Instance.DeleteProduct(product);
+            Database.Instance.DeleteProduct(product.Id);
             Screen.Clear();
             Draw();
         }

@@ -22,7 +22,6 @@ namespace ErpCli.Data
         }
         public List<Product> GetProducts()
         {
-            //return ProductList;
             List<Product> productCopy = new();
             productCopy.AddRange(ProductList);
             return productCopy;
@@ -40,15 +39,17 @@ namespace ErpCli.Data
                     ProductList[i] = editProduct;
             }
         }
-        public void DeleteProduct(Product product)
+        public void DeleteProduct(int id)
         {
-            if(product.Id == 0)
+            for (int i = 0; i < ProductList.Count; i++)
             {
-                return;
-            }
-            if (ProductList.Contains(product))
-            {
-                ProductList.Remove(product);
+                Product product = ProductList[i];
+                if (product.Id == id)
+                {
+                    ProductList.RemoveAt(i);
+                    break;
+                }
+
             }
         }
     }
