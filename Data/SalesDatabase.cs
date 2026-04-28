@@ -6,7 +6,7 @@ namespace ErpCli.Data
     {
         List<SalesOrderHeader> SalesOrderHeaderList = new List<SalesOrderHeader>()
         {
-            new SalesOrderHeader { OrderNumber = 1, OrderCreatedAt = new DateTime(2025, 12, 05), OrderCompletedAt = new DateTime(2025, 12, 06), CustomerId = 5, status = SalesOrderHeader.Status.Oprettet}
+            new SalesOrderHeader { OrderNumber = 1, OrderCreatedAt = new DateTime(2025, 12, 05), OrderCompletedAt = new DateTime(2025, 12, 06), CustomerId = 5, Status = SalesOrderHeader.OrderStatus.Oprettet}
         };
         public SalesOrderHeader GetSalesOrderHeader(int id)
         {
@@ -49,4 +49,5 @@ namespace ErpCli.Data
             }
         }
     }
+    
 }
