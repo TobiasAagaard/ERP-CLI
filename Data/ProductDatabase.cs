@@ -10,7 +10,7 @@ namespace ErpCli.Data
             new Product { Id = 2, ItemNumber = "2", Name = "test2", Description = "test2", Price = 20d, Cost = 2d, Location = "test2", StockQuantity = 20d}
         };
 
-        public Product GetProduct(int id)
+        public Product? GetProduct(int id)
         {
             for (int i = 0; i < ProductList.Count; i++)
             {
