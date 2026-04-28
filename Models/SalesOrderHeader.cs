@@ -10,6 +10,9 @@ namespace ErpCli.Models
         public List<OrderLine> OrderLineList = new List<OrderLine>();
         public double? OrderTotal =>
             OrderLineList.Sum(orderLine => orderLine.Product?.Price * orderLine.Quantity ?? 0);
+        public Customer? customer { get; set; }
+        public string? FullName => customer?.FullName;
+
         public enum OrderStatus
         {
             Ingen,
