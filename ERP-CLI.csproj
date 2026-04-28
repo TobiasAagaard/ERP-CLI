@@ -16,4 +16,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ERP-CLI.Tests/**" />
+    <None Remove="ERP-CLI.Tests/**" />
+  </ItemGroup>
+
 </Project>
