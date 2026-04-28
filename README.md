@@ -34,11 +34,9 @@ The app starts in the main menu. Use the arrow keys to navigate, Enter to select
 
 ## Development Workflow
  
-We work in small increments using GitHub issues, feature branches, and pull requests. The main branch is protected and can only be updated via pull requests, which must be reviewed and approved by at least one other developer before they can be merged. This ensures code quality and encourages collaboration and knowledge sharing among the team.
+We work in small increments using GitHub issues, feature branches, and pull requests.
 
 ### Issue tracking
- 
-Work is broken down into small, scoped issues before any code is written. Issues use a short prefix to indicate which area of the system they belong to:
  
 | Prefix | Area | Examples |
 |---|---|---|
@@ -49,6 +47,14 @@ Work is broken down into small, scoped issues before any code is written. Issues
 | `S` | Sales orders (Salg) | S1 Sales order database methods, S2 Sales order list screen, S3 Sales order details screen, S4 Create/edit sales order screen, S5 F2 edit sales order, S6 F2 create new sales order, S7 F5 delete sales order |
 | `B` | Database | B1 Partial Database class with Company methods, B2 Product table SQL script, B3 Address table SQL script, B4 Person table SQL script, B5 Customer table SQL script, B6 Sales order header table SQL script, B7 Sales order table SQL script, B8 SQL Server connection handling |
 | `X` | Extra / cross-cutting | X1 Invoice export HTML/CSS, X2 Unit tests for basic classes, X3 Purchase and sales orders, X4 Inventory management (effectuate orders) |
+
+
+
+## Contributors
+ 
+- [Nicklas](https://github.com/NickRaics)
+- [Tobias](https://github.com/TobiasAagaard)
+- [Malthe](https://github.com/Malthebk3)
 
 ## License
  
