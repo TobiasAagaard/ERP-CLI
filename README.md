@@ -15,7 +15,8 @@ LNE Security is a B2B IT-services company with 350 employees and departments in 
 - [.NET 10 SDK (preview)](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ### Build and run 
- 
+Clone the repository, navigate to the project folder, and run the following commands in your terminal:
+
 ```bash
 dotnet restore
 dotnet build
