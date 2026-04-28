@@ -34,36 +34,13 @@ Unit tests live in the [ERP-CLI.Tests](ERP-CLI.Tests/) project and use [xUnit](h
 dotnet test
 ```
 
-### Current tests
-
-| Class | Test | Verifies |
-|---|---|---|
-| [`ProductTests`](ERP-CLI.Tests/ProductTests.cs) | `ProfitPercent_WhenPriceIsDoubleCost_Returns100` | `Product.ProfitPercent` returns `100` when `Price` is double `Cost` |
-
 ### Naming convention
 
-We follow the `MethodName_Scenario_ExpectedBehavior` pattern recommended in Microsoft's [unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices):
+We follow the `MethodName_Scenario_ExpectedBehavior` naming convention
 
-- **MethodName** — the method or property under test (e.g. `ProfitPercent`)
-- **Scenario** — the input or state being exercised (e.g. `WhenPriceIsDoubleCost`)
-- **ExpectedBehavior** — the observable result (e.g. `Returns100`)
-
-Example:
-
-```csharp
-[Fact]
-public void ProfitPercent_WhenPriceIsDoubleCost_Returns100()
-{
-    // Arrange
-    Product product = new Product { Price = 100, Cost = 50 };
-
-    // Act
-    var result = product.ProfitPercent;
-
-    // Assert
-    Assert.Equal(100, result);
-}
-```
+- **MethodName** — the method or property under test
+- **Scenario** — the input or state being exercised 
+- **ExpectedBehavior** — the observable result
 
 Each test should follow the **Arrange–Act–Assert** structure so the three phases are easy to read.
 
