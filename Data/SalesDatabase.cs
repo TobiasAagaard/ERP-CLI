@@ -28,7 +28,7 @@ namespace ErpCli.Data
             for (int i = 0; i < SalesOrderHeaderCopy.Count; i++)
             {
                 SalesOrderHeader header = SalesOrderHeaderCopy[i];
-                header.customer = GetCustomerById(header.CustomerId);
+                header.customer = GetCustomerById(header.CustomerId); // Slår kunden op via CustomerId og tilknytter den, så FullName kan vises
             }
             return SalesOrderHeaderCopy;
         }
