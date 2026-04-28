@@ -13,8 +13,11 @@ namespace ErpCli.Data
             for (int i = 0; i < SalesOrderHeaderList.Count; i++)
             {
                 SalesOrderHeader SalesOrderHeader = SalesOrderHeaderList[i];
-                if (SalesOrderHeader.OrderNumber == id)
+                if (id == SalesOrderHeader.OrderNumber)
+                {
+                    SalesOrderHeader.customer = GetCustomerById(SalesOrderHeader.CustomerId);
                     return SalesOrderHeader;
+                }
             }
             return null;
         }
@@ -22,6 +25,11 @@ namespace ErpCli.Data
         {
             List<SalesOrderHeader> SalesOrderHeaderCopy = new();
             SalesOrderHeaderCopy.AddRange(SalesOrderHeaderList);
+            for (int i = 0; i < SalesOrderHeaderCopy.Count; i++)
+            {
+                SalesOrderHeader header = SalesOrderHeaderCopy[i];
+                header.customer = GetCustomerById(header.CustomerId);
+            }
             return SalesOrderHeaderCopy;
         }
         public void AddSalesOrderHeader(SalesOrderHeader SalesOrderHeader)
