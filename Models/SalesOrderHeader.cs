@@ -6,8 +6,18 @@ namespace ErpCli.Models
         public DateTime OrderCreatedAt { get; set; }
         public DateTime OrderCompletedAt { get; set;}
         public int CustomerId { get; set; }
-        public Status status { get; set; }
-        public enum Status
+        public OrderStatus Status { get; set; }
+        public List<OrderLine> OrderLineList = new List<OrderLine>();
+        public double? OrderTotal()
+        {
+            double? result = 0;
+            foreach(OrderLine orderLine in OrderLineList)
+            {
+                result += orderLine.Product?.Price;
+            }
+            return result;
+        }
+        public enum OrderStatus
         {
             Ingen,
             Oprettet,
