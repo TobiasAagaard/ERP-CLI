@@ -18,15 +18,16 @@ namespace ErpCli.Views
         protected override void Draw()
         {
             ExitOnEscape();
+            Customer? customer = Database.Instance.GetCustomerById(salesOrderHeader.CustomerId);
 
             Console.WriteLine($"Ordrenummer: {salesOrderHeader.OrderNumber}");
             Console.WriteLine($"Dato: {salesOrderHeader.OrderCreatedAt}");
             Console.WriteLine($"Kundenummer: {salesOrderHeader.CustomerId}");
-            //Console.WriteLine($"Navn: {salesOrderHeader.}");
+            Console.WriteLine($"Navn: {customer?.FirstName} {customer?.LastName}");
 
             Console.WriteLine("Tryk F2 for at redigere");
             AddKey(ConsoleKey.F2, () => {
-                throw new NotImplementedException();
+                Screen.Display(new SalesDetailsScreen(salesOrderHeader));
             });
         }
     }

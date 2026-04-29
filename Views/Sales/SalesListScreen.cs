@@ -7,17 +7,18 @@ namespace ErpCli.Views
     public class SalesListScreen : Screen
     {
         public override string Title { get; set; } = "Salgsliste";
-
         protected override void Draw()
         {
             ExitOnEscape();
 
             ListPage<SalesOrderHeader> listPage = new();
-
+            
+            SalesOrderHeader salesOrderHeader = new();
+            
             listPage.AddColumn("Salgsordrenummer", nameof(SalesOrderHeader.OrderNumber));
             listPage.AddColumn("Dato", nameof(SalesOrderHeader.OrderCreatedAt));
             listPage.AddColumn("Kundenummer", nameof(SalesOrderHeader.CustomerId));
-            //listPage.AddColumn("Navn", nameof(SalesOrderHeader.));
+            listPage.AddColumn("Navn", nameof(SalesOrderHeader.FullName));
             listPage.AddColumn("Beløb", nameof(SalesOrderHeader.OrderTotal));
 
 
@@ -27,10 +28,10 @@ namespace ErpCli.Views
                 listPage.Add(model);
             }
 
-            SalesOrderHeader salesOrderHeader = listPage.Select();
-            if (salesOrderHeader != null) 
+            SalesOrderHeader SelectedSalesOrderHeader = listPage.Select();
+            if (SelectedSalesOrderHeader != null) 
             {
-                Display(new SalesDetailsScreen(salesOrderHeader));
+                Display(new SalesDetailsScreen(SelectedSalesOrderHeader));
             }
             else
             {
