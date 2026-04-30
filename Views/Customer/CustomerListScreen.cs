@@ -25,14 +25,14 @@ public class CustomerListScreen : Screen
 
 //TODO K5, K6, K7:
         //listPage.AddKey(ConsoleKey.F1, CreateNewCustomer);
-        //listPage.AddKey(ConsoleKey.F2, EditCustomer);
+        listPage.AddKey(ConsoleKey.F2, EditCustomer);
         //listPage.AddKey(ConsoleKey.F5, DeleteCustomer);
 
-//TODO K5, K6, K7:
-        //listPage.AddColumn("Kundenummer", nameof(Customer.CustomerId), 12);
-        //listPage.AddColumn("Navn", nameof(Customer.FullName), 30);
-        //listPage.AddColumn("Telefon", nameof(Customer.Phone), 15);
-        //listPage.AddColumn("Email", nameof(Customer.Email), 30);
+
+        listPage.AddColumn("Kundenummer", nameof(Customer.CustomerId), 12);
+        listPage.AddColumn("Navn", nameof(Customer.FullName), 30);
+        listPage.AddColumn("Telefon", nameof(Customer.Phone), 15);
+        listPage.AddColumn("Email", nameof(Customer.Email), 30);
 
         List<Customer> customers = Database.Instance.GetAllCustomers();
         foreach (Customer model in customers)
@@ -58,10 +58,10 @@ public class CustomerListScreen : Screen
     //    Screen.Display(new CustomerEditScreen(customer));
     //}
 
-    //void EditCustomer(Customer customer)
-    //{
-    //    Screen.Display(new CustomerEditScreen(customer));
-    //}
+    void EditCustomer(Customer customer)
+    {
+        Screen.Display(new CustomerEditScreen(customer));
+    }
 
     //void DeleteCustomer(Customer customer)
     //{
