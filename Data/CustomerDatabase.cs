@@ -15,8 +15,9 @@ namespace ErpCli.Data
             for (int i = 0; i < Customers.Count; i++)
             {
                 Customer customer = Customers[i];
-                if (customer.CustomerId == id)
+                if (id == customer.CustomerId)
                 {
+                    customer.Address = GetCustomerById(id)?.Address;
                     return customer;
                 }
             }
