@@ -25,7 +25,18 @@ namespace ErpCli.Views
         protected override void Draw()
         {
             ExitOnEscape();
-            Customer? customer = Database.Instance.GetCustomerById(salesOrderHeader.CustomerId);
+
+            Customer? customer;
+            if (Database.Instance.GetCustomerById(salesOrderHeader.CustomerId) != null)
+            {
+                customer = Database.Instance.GetCustomerById(salesOrderHeader.CustomerId);
+            }
+            else
+            {
+                customer = new();
+            }
+            
+
             Form<Customer> form = new();
 
             form.TextBox("Fornavn", nameof(customer.FirstName));
