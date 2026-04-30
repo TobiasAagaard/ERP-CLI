@@ -6,7 +6,7 @@ namespace ErpCli.Data
     {
         List<Customer> Customers = new List<Customer>()
         {
-            new Customer { Id = 1, CustomerId = 1001, LastPurchaseAt = new DateTime(2026, 4, 20), FirstName = "Julius", LastName = "Cæsar", Phone = "66998822", Email = "ROME69@empire.com", Address = new Address {Street = "Rulerroad", Number = "33", PostalCode = "00100", City = "Rome", Country = "Italy"}},
+            new Customer { Id = 1, CustomerId = 1001, LastPurchaseAt = new DateTime(2026, 4, 20), FirstName = "Julius", LastName = "Cæsar", Phone = "66998822", Email = "ROME69@empire.com", Address = new Address {Street = "Krigsvej", Number = "1", PostalCode = "1234", City = "Rom", Country = "Italien"}},
             new Customer { Id = 2, CustomerId = 1002, LastPurchaseAt = new DateTime(2026, 4, 26), FirstName = "Harald", LastName = "Blåtand", Phone = "45454545", Email = "DANMARK45@danemail.com", Address = new Address {Street = "Vikingevej", Number = "45", PostalCode = "9999", City = "Aalborg", Country = "Danmark"}}
         };
 
@@ -17,11 +17,10 @@ namespace ErpCli.Data
                 Customer customer = Customers[i];
                 if (id == customer.CustomerId)
                 {
-                    customer.Address = GetCustomerById(id)?.Address;
                     return customer;
                 }
             }
-            return null;
+                return null;
         }
 
         public List<Customer> GetAllCustomers()
