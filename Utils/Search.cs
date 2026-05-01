@@ -9,7 +9,6 @@ namespace ErpCli.Utils
             List<T> SearchResults = list.Where(x => x.GetType().GetProperty(SearchPropety)?.GetValue(x)?.ToString() == SearchTerm).ToList();
             if (SearchResults.Count > 0)
             {
-                Console.WriteLine($"Fandt {SearchResults.Count} resultater:");
                 foreach (T result in SearchResults)
                 {
                     Console.WriteLine(result);
