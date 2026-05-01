@@ -26,7 +26,7 @@ namespace ErpCli.Views
 
             Console.WriteLine();
             
-            listPage.AddColumn("Salgsordrenummer", nameof(SalesOrderHeader.OrderNumber));
+            listPage.AddColumn("Salgsordrenummer", nameof(SalesOrderHeader.OrderNumber), 20);
             listPage.AddColumn("Dato", nameof(SalesOrderHeader.OrderCreatedAt));
             listPage.AddColumn("Kundenummer", nameof(SalesOrderHeader.CustomerId));
             listPage.AddColumn("Navn", nameof(SalesOrderHeader.FullName));

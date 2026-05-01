@@ -36,35 +36,6 @@ namespace ErpCli.Views
                 customer = new();
             }
             
-
-            Form<Customer> form = new();
-
-            form.TextBox("Fornavn", nameof(customer.FirstName));
-            form.TextBox("Efternavn", nameof(customer.LastName));
-            form.TextBox("Vej", nameof(customer.Street));
-            form.TextBox("Husnummer", nameof(customer.Number));
-            form.TextBox("Postnummer", nameof(customer.PostalCode));
-            form.TextBox("By", nameof(customer.City));
-            form.TextBox("Telefonnummer", nameof(customer.Phone));
-            form.TextBox("Email", nameof(customer.Email));
-
-            if (form.Edit(customer)) 
-            {
-                if (customer.Id != 0)
-                {
-                    Database.Instance.UpdateCustomer(customer);
-
-                }
-                else
-                {
-                    Database.Instance.AddCustomer(customer);
-                }
-                Console.WriteLine("Ændringerne blev gemt");
-            }
-            else
-            {
-                Console.WriteLine("Ingen ændringer");
-            }
         }
     }
 }
