@@ -53,6 +53,7 @@ namespace ErpCli.Views
                 if (customer.Id != 0)
                 {
                     Database.Instance.UpdateCustomer(customer);
+
                 }
                 else
                 {
