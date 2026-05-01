@@ -25,7 +25,7 @@ The application is designed as a foundation that can be extended to other indust
 
    ```bash
    git clone https://github.com/TobiasAagaard/TECHCOOL.git
-   git clone <this-repository-url> ERP-CLI
+   git clone https://github.com/TobiasAagaard/ERP-CLI/tree/S4/--Search-intergration ERP-CLI
    ```
 
 3. From inside `ERP-CLI/`, build and run:
