@@ -1,4 +1,5 @@
 using ErpCli.Models;
+using ErpCli.Utils;
 
 namespace ErpCli.Data
 {
@@ -56,6 +57,12 @@ namespace ErpCli.Data
                     break;
                 }
             }
+        }
+
+        public void FormSearchSalesOrderHeader(string SearchProperty)
+        {
+            Search search = new Search();
+            search.SearchByProperty(Customers, SearchProperty);
         }
     }
     

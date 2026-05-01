@@ -2,11 +2,11 @@ namespace ErpCli.Utils
 {
     public class Search
     {
-        public void SearchByParameter<T>(List<T> list, string SearchPropety)
+        public void SearchByProperty<T>(List<T> list, string SearchProperty)
         {
-            Console.Write($"Søge efter {SearchPropety}");
+            Console.Write($"Søge efter {SearchProperty}");
             string SearchTerm = Console.ReadLine() ?? string.Empty;
-            List<T> SearchResults = list.Where(x => x.GetType().GetProperty(SearchPropety)?.GetValue(x)?.ToString() == SearchTerm).ToList();
+            List<T> SearchResults = list.Where(x => x?.GetType().GetProperty(SearchProperty)?.GetValue(x)?.ToString() == SearchTerm).ToList();
             if (SearchResults.Count > 0)
             {
                 foreach (T result in SearchResults)

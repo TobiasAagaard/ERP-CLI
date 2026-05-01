@@ -26,15 +26,9 @@ namespace ErpCli.Views
         {
             ExitOnEscape();
 
-            Customer? customer;
-            if (Database.Instance.GetCustomerById(salesOrderHeader.CustomerId) != null)
-            {
-                customer = Database.Instance.GetCustomerById(salesOrderHeader.CustomerId);
-            }
-            else
-            {
-                customer = new();
-            }
+            //Form<SalesOrderHeader> form = new();
+            
+
             
         }
     }
