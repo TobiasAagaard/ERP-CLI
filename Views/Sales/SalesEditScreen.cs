@@ -1,7 +1,6 @@
 using TECHCOOL.UI;
 using ErpCli.Models;
 using ErpCli.Data;
-using ErpCli.Utils;
 
 namespace ErpCli.Views
 {
@@ -27,9 +26,41 @@ namespace ErpCli.Views
         {
             ExitOnEscape();
 
-            salesOrderHeader.customer = Database.Instance.FormSearchSalesOrderHeader("Phone");
-            Console.WriteLine($"Navn: {salesOrderHeader.FullName}");
             Form<SalesOrderHeader> form = new();
+
+            form.SearchBox("Kunde", nameof(salesOrderHeader.customer), term =>
+                Database.Instance.GetAllCustomers()
+                    .Where(c =>
+                        (c.FullName ?? "").Contains(term, StringComparison.OrdinalIgnoreCase) ||
+                        (c.Email ?? "").Contains(term, StringComparison.OrdinalIgnoreCase) ||
+                        (c.CustomerId.ToString().Contains(term)) ||
+                        (c.Phone ?? "").Contains(term, StringComparison.OrdinalIgnoreCase))
+                    .Select(c => ($"{c.CustomerId} {c.FullName}", (object)c))
+                    .ToList());
+            form.SelectBox("Status", nameof(salesOrderHeader.Status));
+            foreach (var s in Enum.GetValues<SalesOrderHeader.OrderStatus>())
+            {
+                form.AddOption("Status", s.ToString(), s);
+            }
+
+            if (form.Edit(salesOrderHeader))
+            {
+                salesOrderHeader.CustomerId = salesOrderHeader.customer?.CustomerId ?? 0;
+
+                if (salesOrderHeader.OrderNumber != 0)
+                {
+                    Database.Instance.UpdateSalesOrderHeader(salesOrderHeader);
+                }
+                else
+                {
+                    Database.Instance.AddSalesOrderHeader(salesOrderHeader);
+                }
+                Console.WriteLine("Ændringerne blev gemt");
+            }
+            else
+            {
+                Console.WriteLine("Ingen ændringer");
+            }
         }
     }
 }

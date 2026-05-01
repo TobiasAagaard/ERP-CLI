@@ -1,5 +1,5 @@
 using ErpCli.Models;
-using ErpCli.Utils;
+
 
 namespace ErpCli.Data
 {
@@ -59,11 +59,7 @@ namespace ErpCli.Data
             }
         }
 
-        public Customer? FormSearchSalesOrderHeader(string SearchProperty)
-        {
-            Search search = new Search();
-            return search.SearchByProperty(Customers, SearchProperty);
-        }
+        
     }
     
 }
