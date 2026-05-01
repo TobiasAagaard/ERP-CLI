@@ -1,6 +1,7 @@
 using TECHCOOL.UI;
 using ErpCli.Models;
 using ErpCli.Data;
+using ErpCli.Utils;
 
 namespace ErpCli.Views
 {
@@ -26,10 +27,9 @@ namespace ErpCli.Views
         {
             ExitOnEscape();
 
-            //Form<SalesOrderHeader> form = new();
-            
-
-            
+            salesOrderHeader.customer = Database.Instance.FormSearchSalesOrderHeader("Phone");
+            Console.WriteLine($"Navn: {salesOrderHeader.FullName}");
+            Form<SalesOrderHeader> form = new();
         }
     }
 }
