@@ -13,7 +13,18 @@ namespace ErpCli.Views
 
             ListPage<SalesOrderHeader> listPage = new();
             
-            SalesOrderHeader salesOrderHeader = new();
+            Console.WriteLine();
+            
+            listPage.AddKey(ConsoleKey.F2, EditSalesOrderHeader);
+            Console.WriteLine("Tryk F2 for at redigere en salgsordre");
+
+            listPage.AddKey(ConsoleKey.F3, CreateNewSalesOrderHeader);
+            Console.WriteLine("Tryk F3 for at oprette en ny salgsordre");
+
+            listPage.AddKey(ConsoleKey.F5, RemoveSalesOrderHeader);
+            Console.WriteLine("Tryk F5 for at slette en salgsordre");
+
+            Console.WriteLine();
             
             listPage.AddColumn("Salgsordrenummer", nameof(SalesOrderHeader.OrderNumber));
             listPage.AddColumn("Dato", nameof(SalesOrderHeader.OrderCreatedAt));
@@ -37,6 +48,21 @@ namespace ErpCli.Views
             {
                 Quit();
             }
+        }
+        void CreateNewSalesOrderHeader(SalesOrderHeader _)
+        {
+            SalesOrderHeader new_SalesOrderHeader = new();
+            Screen.Display(new SalesEditScreen(new_SalesOrderHeader));
+        }
+        void EditSalesOrderHeader(SalesOrderHeader salesOrderHeader) 
+        {
+            Screen.Display(new SalesEditScreen(salesOrderHeader));
+        }
+        void RemoveSalesOrderHeader(SalesOrderHeader salesOrderHeader) 
+        {
+            Database.Instance.DeleteSalesOrderHeader(salesOrderHeader.OrderNumber);
+            Screen.Clear();
+            Draw();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ErpCli.Views
 
             Console.WriteLine("Tryk F2 for at redigere");
             AddKey(ConsoleKey.F2, () => {
-                Screen.Display(new SalesDetailsScreen(salesOrderHeader));
+                Screen.Display(new SalesEditScreen(salesOrderHeader));
             });
         }
     }
